@@ -15,18 +15,35 @@ class CargosController < ApplicationController
       prod.name = h["name"]
       prod.description = h["description"]
       vars = h["variants"]
-      p
-      p vars
-      productos << prod unless vars.nil? || vars.empty?
+      
+      if !(vars.nil? || vars.empty?)
+        vars.each do |variant|
+          v = Variant.new
+          v.name = variant["name"]
+          v.price = variant["precio"]
+          prod.variants.build(name: v.name, price: v.price) if v.price > 0
+          #prod.variants << v if v.price > 0
+          puts "prod variants length #{prod.variants.length}" 
+        end
+      productos << prod if prod.variants.length > 0
+      end
+
     end
 
-    p productos
+    Product.import productos, recursive: true
+    
     currentCargo.accepted_products = productos.length
     
     dataMsg = "total de productos #{currentCargo.requested_products} aceptados -> #{currentCargo.accepted_products} "
     puts(dataMsg)
-    p data
-    render json: { message: 'Importing data' }, status: 200
+
+    if currentCargo.save
+      render json: { message: 'Importing data' }, status: 200
+    else
+      render json: { message: 'Import failed' }, status: 402 
+    end
+
+    
   end
 
   private
