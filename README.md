@@ -4,8 +4,7 @@
 #
 ## Live Demo
 
-[Technical Test ON HEROKU](https://perform-track.herokuapp.com/)#
-
+[Technical Test ON HEROKU](https://thawing-beach-24532.herokuapp.com/)#
 
 
 # Built With
@@ -51,61 +50,33 @@ data = {
     }
 ```
 
-The call shall be made as the following example using axios:  
+The call shall be made as the following example :  
 
-post(`https://gentle-shore-76199.herokuapp.com/users`, data)
-
-If the request is successful it will respond with a json formmated resposen like the following:
-
-```
-{
-    "user": {
-        "id": 4,
-        "name": "testuser",
-        "email": "testuser@performapi.edu",
-        "password_digest": "$2a$12$N9RSyO1b9u0SE45q8xvAAe806WZZA5Km2GkMZ6atDPS6YhX/MSbfW",
-        "role": null,
-        "created_at": "2021-06-07T17:12:46.781Z",
-        "updated_at": "2021-06-07T17:12:46.781Z"
-    },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MjU2Nzc5NjZ9.7BxNxLGrEwNGSU8u5pUZisT9mW6d5Hzr3uS_SqalSBo",
-    "status": 201,
-    "message": "Log in successful"
-}
-```
-
-Which incliude the status and the created token for the user session.
-
-## Login control
-
-To Login the user to the API app you can use the following request:  
-
-post(`https://gentle-shore-76199.herokuapp.com/login`, data)
-
-using the following json data :
-
-```
-data = {
-      name: username,
-      password: password,
-      }
-```
+post(`https://thawing-beach-24532.herokuapp.com//cargos/import`, data)
 
 If the request is successful it will respond with a json formmated resposen like the following:
 
 ```
-{
-    "user": {
-        "id": 4,
-        "name": "testuser",
-        "email": "testuser@performapi.edu",
-        "password_digest": "$2a$12$N9RSyO1b9u0SE45q8xvAAe806WZZA5Km2GkMZ6atDPS6YhX/MSbfW",
-        "role": null,
-        "created_at": "2021-06-07T17:12:46.781Z",
-        "updated_at": "2021-06-07T17:12:46.781Z"
+[
+    {
+        "name":"Producto 1",
+        "description":"Runners like tenis most famous",
+        "variants":[
+            {"name":"model 1", "precio":1500},
+            {"name":"model 2", "precio":1600},
+            {"name":"model 3", "precio":1600}
+        ]
     },
-    "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2MjU2NzgyOTZ9.H8ngm_52Mht3sQkY59dfWXHMORPn3Yr02YeObSU-cNw",
-    "status": "created"
-}
+    {
+        "name":"Pants Producto 2",
+        "description":"Be Ware of Dog",
+        "variants":[
+            {"name":"model 1", "precio":400},
+            {"name":"model 2", "precio":450},
+            {"name":"model 3", "precio":500},
+            {"name":"model 4", "precio":500}
+        ]
+    }
+]
 ```
 
