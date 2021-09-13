@@ -38,17 +38,6 @@ At the end you should run the following command to run the API service.
 
 ## Import product data
 
-To create user you can use the endpoint: POST :  https://gentle-shore-76199.herokuapp.com/users 
-
-using the following json data :
-```
-data = {
-      name: username,
-      email: email,
-      password: password,
-      password_confirmation: passwordConfirmation
-    }
-```
 
 The call shall be made as the following example :  
 
