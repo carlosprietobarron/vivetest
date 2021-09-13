@@ -2,6 +2,7 @@ class CargosController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
+    @cargos = Cargo.all
   end
 
   def import

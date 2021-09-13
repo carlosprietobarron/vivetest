@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%=@product.name%></h1>
+<h2><%=@product.description%></h2>
+
+<%=variant_list(@product.variants)%>
+
+<br>
+
+<%= link_to 'Productos', products_index_path %>

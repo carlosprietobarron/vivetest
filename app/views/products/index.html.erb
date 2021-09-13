@@ -1,0 +1,25 @@
+<div class="products-container">
+  <div class="wrapper">Productos</div>
+  <div class="wrapper">Totales <span><%=@products.length%></span></div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= show_btn(product.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
