@@ -41,9 +41,9 @@ At the end you should run the following command to run the API service.
 
 The call shall be made as the following example :  
 
-post(`https://thawing-beach-24532.herokuapp.com//cargos/import`, data)
+post `https://thawing-beach-24532.herokuapp.com//cargos/import`
 
-If the request is successful it will respond with a json formmated resposen like the following:
+using the following json data :
 
 ```
 [
