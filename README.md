@@ -69,3 +69,5 @@ If the request is successful it will respond with a json formmated resposen like
 ]
 ```
 
+## Architecture
+![screenshot](./architecture.png)
