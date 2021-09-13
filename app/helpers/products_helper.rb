@@ -20,8 +20,8 @@ end
         variants.collect do |v|
           @content.concat(
             content_tag(:div, class: 'variant-card') do
-              concat(content_tag(:p, v.name) + ' ' +
-                     content_tag(:p, v.price) 
+              concat(content_tag(:span, v.name) + '  |  $' +
+                     content_tag(:span, v.price) 
               )
             end
           )
